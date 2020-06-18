@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
-import { useKeys } from '../../effects/useKeys'
+import { useKeys } from '../../effects/useKeys';
 import { useAudio } from "../../effects/useAudio";
 
-export const KeyResponse = (props) => {
+import "./styles.css";
+
+export const KeyResponse = React.memo(({setGuess}) => {
   const displayKey = keyCode => {
     console.log(`pressedKey: ${keyCode}`);
+    // force state to change even on the same keypress
+    setKeyCode(null);
     setKeyCode(keyCode);
-  };
-  const noOp = keyCode => {
-    console.log(`noop: ${keyCode}`)
+    setGuess && setGuess(keyCode);
   };
 
   const [keyCode, setKeyCode] = useState(null);
 
-  useKeys(displayKey, displayKey, noOp, noOp);
+  useKeys(displayKey, displayKey);
   useAudio(keyCode);
 
   const pressedKey = String.fromCharCode(keyCode);
 
   let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-  return <div style={{color: randomColor, fontSize: 500}}>{pressedKey}</div>
-};
+  return <div className="KeyResponse" style={{color: randomColor}}>{pressedKey}</div>
+});
 

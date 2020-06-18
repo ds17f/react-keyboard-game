@@ -1,0 +1,8 @@
+.Prompt {
+    font-size: 50px
+}
+
+.Prompt .TargetKey {
+    color: red;
+}
+
