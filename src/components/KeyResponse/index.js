@@ -4,7 +4,7 @@ import { useAudio } from "../../effects/useAudio";
 
 import "./styles.css";
 
-export const KeyResponse = React.memo(({audioPath, setGuess}) => {
+export const KeyResponse = React.memo(({audioPath, setGuess, db}) => {
   const displayKey = keyCode => {
     console.log(`pressedKey: ${keyCode}`);
     // force state to change even on the same keypress
@@ -16,7 +16,7 @@ export const KeyResponse = React.memo(({audioPath, setGuess}) => {
   const [keyCode, setKeyCode] = useState(null);
 
   useKeys(displayKey, displayKey);
-  useAudio(audioPath, keyCode);
+  useAudio(audioPath, keyCode, db);
 
   const pressedKey = String.fromCharCode(keyCode);
 

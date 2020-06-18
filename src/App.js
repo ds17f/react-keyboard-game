@@ -5,6 +5,7 @@ import './App.css';
 
 import { KeyResponse } from './components/KeyResponse';
 import { Prompt } from './components/Prompt';
+import { LetterImage } from "./components/Screens/LetterImage";
 
 function App() {
   const [goal, setGoal] = useState(null);
@@ -14,7 +15,10 @@ function App() {
   return (
     <div className="App">
       <Prompt setGoal={setGoal}/>
-      <KeyResponse audioPath={isBeta ? "set2/" : "set1/"} setGuess={setGuess}/>
+      { isBeta
+        ? <LetterImage setGuess={setGuess} />
+        : <KeyResponse audioPath="set1/" setGuess={setGuess} />
+      }
       {
         goal !== null && goal === guess
         ? <div>YOU WIN</div>

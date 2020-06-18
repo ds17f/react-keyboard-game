@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import db from "./db"
 
 const setupPlaylist = (audioElement, tracks) => {
   let i = 0;
@@ -15,14 +14,14 @@ const setupPlaylist = (audioElement, tracks) => {
   }, false)
 };
 
-export const useAudio = (path, keyCode) => {
+export const useAudio = (path, keyCode, db) => {
   useEffect(() => {
     if (keyCode === null) {
       return;
     }
     const pressedLetter = String.fromCharCode(keyCode);
     const audio = new Audio();
-    if (db[pressedLetter]) {
+    if (db && db[pressedLetter]) {
       const choose = Math.floor(Math.random() * db[pressedLetter].length);
       const choice = db[pressedLetter][choose][0];
       setupPlaylist(audio, [
