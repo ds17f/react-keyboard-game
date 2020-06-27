@@ -14,23 +14,35 @@ const setupPlaylist = (audioElement, tracks) => {
   }, false)
 };
 
-export const useAudio = (path, keyCode, db) => {
+export const useAudio2 = (tracks) => {
   useEffect(() => {
-    if (keyCode === null) {
+    const audio = new Audio();
+    setupPlaylist(audio, tracks);
+    audio.play();
+    return () => {
+      audio && audio.pause && audio.pause()
+    }
+  });
+
+};
+export const useAudio = (path, letter, db) => {
+  useEffect(() => {
+    if (letter === null) {
       return;
     }
-    const pressedLetter = String.fromCharCode(keyCode);
+
     const audio = new Audio();
-    if (db && db[pressedLetter]) {
-      const choose = Math.floor(Math.random() * db[pressedLetter].length);
-      const choice = db[pressedLetter][choose][0];
+
+    if (db && db[letter]) {
+      const choose = Math.floor(Math.random() * db[letter].length);
+      const choice = db[letter][choose][0];
       setupPlaylist(audio, [
-        `${window.location.origin}/audio/${path}${pressedLetter}.mp3`,
+        `${window.location.origin}/audio/${path}${letter}.mp3`,
         `${window.location.origin}/audio/${path}as_in.mp3`,
-        `${window.location.origin}/audio/${path}${pressedLetter}/${choice}`,
+        `${window.location.origin}/audio/${path}${letter}/${choice}`,
       ]);
     } else {
-      audio.src = `${window.location.origin}/audio/${path}${pressedLetter}.mp3`;
+      audio.src = `${window.location.origin}/audio/${path}${letter}.mp3`;
     }
 
     audio.play();

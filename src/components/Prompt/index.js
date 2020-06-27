@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
-import { useKeys } from "../../effects/useKeys";
+import {randomAlphaNum, useKeys} from "../../effects/useKeys";
 
 import "./styles.css"
 
 export const Prompt = ({setGoal}) => {
   const promptForKey = () => {
-    // generate a random number or letter
-    let randomKeyCode = Math.floor((Math.random()*36));
-    if (randomKeyCode < 10) {
-      randomKeyCode += 48;
-    } else {
-      randomKeyCode += 65 - 10;
-    }
-    const randomKey = String.fromCharCode(randomKeyCode);
-    setGoal && setGoal(randomKeyCode);
-    setTargetKey(randomKey)
+    const alphaNum = randomAlphaNum();
+    setGoal && setGoal(alphaNum);
+    setTargetKey(alphaNum)
   };
   const reset = () => {
     console.log("reset");

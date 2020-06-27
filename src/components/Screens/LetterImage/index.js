@@ -1,6 +1,6 @@
 import React from 'react';
 import { KeyResponse } from "../../KeyResponse";
-import db from '../../../effects/db'
+import db from './db'
 
 export const LetterImage = ({setGuess}) => {
 

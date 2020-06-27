@@ -34,6 +34,12 @@ const esc = callback => {
   };
 };
 
+export const randomAlphaNum = () => {
+  const alphaNum = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  const rand = Math.floor((Math.random()*36));
+  return alphaNum[rand];
+};
+
 export const useKeys = (alphaCallback, numericCallback, spacebarCallback, escCallback) => {
   useEffect(() => {
     const callbacks = [];
