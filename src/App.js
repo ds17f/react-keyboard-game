@@ -5,20 +5,18 @@ import './App.css';
 
 import { KeyResponse } from './components/KeyResponse';
 import { Prompt } from './components/Prompt';
-import { LetterImage } from "./components/Screens/LetterImage";
+import { GameBoard } from "./components/Game/LetterSearch";
 
 function App() {
   const [goal, setGoal] = useState(null);
   const [guess, setGuess] = useState(null);
   const [isBeta, setBeta] = useState(false);
 
-  // return <Matching/>;
-
   return (
     <div className="App">
       <Prompt setGoal={setGoal}/>
       { isBeta
-        ? <LetterImage setGuess={setGuess} />
+        ? <GameBoard/>
         : <KeyResponse audioPath="set1/" setGuess={setGuess} />
       }
       {

@@ -1,0 +1,30 @@
+body {
+    overscroll-behavior-y: contain;
+    touch-action: none;
+}
+
+
+.GameBoard {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.LetterSearch {
+    font-size: 32px;
+    text-align: center;
+}
+
+.LetterCell {
+    border: 0;
+    padding: 0;
+}
+
+* {
+    touch-action: none;
+    user-select: none;
+}
+
+.table td {
+    border-top: 20px
+}
