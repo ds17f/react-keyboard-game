@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "713c91d94faaed5218ae8ae91ba3d589",
+    "revision": "d47711f6da0921b97fb7689bf7ccb0fa",
     "url": "/react-keyboard-game/index.html"
   },
   {
