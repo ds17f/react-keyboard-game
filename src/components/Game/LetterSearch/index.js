@@ -126,7 +126,7 @@ const SelectCell = ({content, selectedColor, style, audio}) => {
 
   const speakLetter = () => {
     const path = "set1";
-    audio.src = `${window.location.origin}/audio/${path}/${content}.mp3`;
+    audio.src = `${window.location.origin}${window.location.pathname}audio/${path}/${content.toLowerCase()}.mp3`;
     audio.play();
   };
 

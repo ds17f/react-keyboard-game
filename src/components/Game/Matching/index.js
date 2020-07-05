@@ -26,7 +26,7 @@ export const Matching = () => {
   };
 
   useKeys(alphaNum, alphaNum, chooseGoal, reset);
-  useSoundEffect(pressedKey);
+  useSoundEffect(pressedKey.toLowerCase());
 
 
   return <div>

@@ -37,12 +37,12 @@ export const useAudio = (path, letter, db) => {
       const choose = Math.floor(Math.random() * db[letter].length);
       const choice = db[letter][choose][0];
       setupPlaylist(audio, [
-        `${window.location.origin}/audio/${path}${letter}.mp3`,
-        `${window.location.origin}/audio/${path}as_in.mp3`,
-        `${window.location.origin}/audio/${path}${letter}/${choice}`,
+        `${window.location.origin}${window.location.pathname}audio/${path}${letter.toLowerCase()}.mp3`,
+        `${window.location.origin}${window.location.pathname}audio/${path}as_in.mp3`,
+        `${window.location.origin}${window.location.pathname}audio/${path}${letter}/${choice}`,
       ]);
     } else {
-      audio.src = `${window.location.origin}/audio/${path}${letter}.mp3`;
+      audio.src = `${window.location.origin}${window.location.pathname}audio/${path}${letter.toLowerCase()}.mp3`;
     }
 
     audio.play();
