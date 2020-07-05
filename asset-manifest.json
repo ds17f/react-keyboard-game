@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-keyboard-game/static/css/main.dd69ed22.chunk.css",
-    "main.js": "/react-keyboard-game/static/js/main.96ddd003.chunk.js",
-    "main.js.map": "/react-keyboard-game/static/js/main.96ddd003.chunk.js.map",
+    "main.js": "/react-keyboard-game/static/js/main.d102ccec.chunk.js",
+    "main.js.map": "/react-keyboard-game/static/js/main.d102ccec.chunk.js.map",
     "runtime-main.js": "/react-keyboard-game/static/js/runtime-main.2c76e6e2.js",
     "runtime-main.js.map": "/react-keyboard-game/static/js/runtime-main.2c76e6e2.js.map",
     "static/css/2.829c9cb5.chunk.css": "/react-keyboard-game/static/css/2.829c9cb5.chunk.css",
     "static/js/2.4e70a6b0.chunk.js": "/react-keyboard-game/static/js/2.4e70a6b0.chunk.js",
     "static/js/2.4e70a6b0.chunk.js.map": "/react-keyboard-game/static/js/2.4e70a6b0.chunk.js.map",
     "index.html": "/react-keyboard-game/index.html",
-    "precache-manifest.3b606ffe1c870b669fd3a81fbd7e45e0.js": "/react-keyboard-game/precache-manifest.3b606ffe1c870b669fd3a81fbd7e45e0.js",
+    "precache-manifest.ec594f8b1067561002e27578293c47db.js": "/react-keyboard-game/precache-manifest.ec594f8b1067561002e27578293c47db.js",
     "service-worker.js": "/react-keyboard-game/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/react-keyboard-game/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.dd69ed22.chunk.css.map": "/react-keyboard-game/static/css/main.dd69ed22.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.4e70a6b0.chunk.js",
     "static/css/main.dd69ed22.chunk.css",
-    "static/js/main.96ddd003.chunk.js"
+    "static/js/main.d102ccec.chunk.js"
   ]
 }
