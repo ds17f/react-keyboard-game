@@ -56,7 +56,7 @@ export const GameBoard = ({rows, columns}) => {
   //   <div>{JSON.stringify(makeMatrix(3,3,shuffledColors))}</div>
   // );
 
-  const rowHeight = (window.innerHeight - 30) / rows;
+  const rowHeight = (window.innerHeight - 90) / rows;
   const colWidth = (window.innerWidth * .8) / columns;
 
   const cellStyle = {

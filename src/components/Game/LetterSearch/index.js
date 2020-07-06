@@ -95,7 +95,7 @@ const LetterSearch = ({size , bias}) => {
 
   const matrix = generateLetterMatrix(numOfRows, numOfColumns, bias);
 
-  const rowHeight = (window.innerHeight - 30) / numOfRows;
+  const rowHeight = (window.innerHeight - 90) / numOfRows;
   const colWidth = (window.innerWidth * .8) / numOfColumns;
 
   const cellStyle = {
