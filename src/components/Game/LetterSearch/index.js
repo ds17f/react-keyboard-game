@@ -3,12 +3,20 @@ import {Table} from "react-bootstrap";
 import "./styles.css"
 import { lightOrDark } from '../../../lib'
 
+const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 export const  GameBoard = () => {
+
+  const rands = [
+    Math.floor((Math.random()*ALPHABET.length)),
+    Math.floor((Math.random()*ALPHABET.length)),
+    Math.floor((Math.random()*ALPHABET.length)),
+  ];
+
   const bias = [
-    ["Y", .15, "lightblue"],
-    ["H", .15, "red"],
-    ["M", .15, "lightgreen"],
-    ["O", .15, "orange"],
+    [ALPHABET[rands[0]], .20, "lightblue"],
+    [ALPHABET[rands[1]], .20, "red"],
+    [ALPHABET[rands[2]], .20, "lightgreen"],
   ];
 
   const size = Math.min(10,Math.floor((window.innerHeight - 30) / 60));
@@ -24,7 +32,7 @@ export const  GameBoard = () => {
 // bias is an array of letters and their weights
 // so [["A",.25],["Z",.10]]
 const randomAlpha = (bias) => {
-  let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let alphabet = ALPHABET;
   // remove the biased letters from the alphabet
   bias.forEach(x => alphabet = alphabet.replace(x[0], ""));
 
@@ -100,7 +108,7 @@ const LetterSearch = ({size , bias}) => {
 
 
   const audio = new Audio();
-  const colorMap = getColorMap("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  const colorMap = getColorMap(ALPHABET);
   return matrix
     ? <Table className="LetterSearch" onClick={(e) => {e.preventDefault()}}>
         <tbody onClick={(e) => {e.preventDefault()}}>

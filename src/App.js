@@ -15,10 +15,9 @@ const Modes = {
 
 
 function App() {
-  const [mode, setMode] = useState(Modes.Keyboard);
+  const [mode, setMode] = useState(Modes.LetterSearch);
 
   const getContent = (mode) => {
-    console.log(mode)
     switch (mode) {
       case Modes.ColorMatch:
         return <ColorMatchGame columns={3} rows={3}/>;
