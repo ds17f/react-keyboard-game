@@ -4,32 +4,60 @@ import { Form } from 'react-bootstrap';
 import './App.css';
 
 import { KeyResponse } from './components/KeyResponse';
-import { Prompt } from './components/Prompt';
-// import { GameBoard } from "./components/Game/LetterSearch";
-import { GameBoard } from "./components/Game/ColorMatch/gameboard"
+import { GameBoard as LetterSearch } from "./components/Game/LetterSearch";
+import { GameBoard as ColorMatchGame } from "./components/Game/ColorMatch/gameboard"
+
+const Modes = {
+  "Keyboard": "Keyboard",
+  "LetterSearch": "LetterSearch",
+  "ColorMatch": "ColorMatch"
+};
+
 
 function App() {
-  const [goal, setGoal] = useState(null);
-  const [guess, setGuess] = useState(null);
-  const [isBeta, setBeta] = useState(true);
+  const [mode, setMode] = useState(Modes.Keyboard);
+
+  const getContent = (mode) => {
+    console.log(mode)
+    switch (mode) {
+      case Modes.ColorMatch:
+        return <ColorMatchGame columns={3} rows={3}/>;
+
+      case Modes.LetterSearch:
+        return <LetterSearch/>;
+
+      case Modes.Keyboard:
+        return <KeyResponse audioPath="set1/" />;
+
+      default:
+        return <div>unknown</div>
+    }
+  };
+
 
   return (
     <div className="App">
-      <Prompt setGoal={setGoal}/>
-      { isBeta
-        ? <GameBoard columns={3} rows={3}/>
-        : <KeyResponse audioPath="set1/" setGuess={setGuess} />
-      }
-      {
-        goal !== null && goal === guess
-        ? <div>YOU WIN</div>
-        : <div />
-      }
-      <Form.Check
-        checked={isBeta}
-        onClick={() => {setBeta(!isBeta)}}
-        label="Beta Mode"
-      />
+
+      { getContent(mode) }
+
+      <div className="ModeSelect">
+        <Form.Control as="select" onChange={(e) => setMode(e.target.value)}>
+          <option value={Modes.Keyboard}>Keyboard</option>
+          <option value={Modes.LetterSearch}>Letter Search</option>
+          <option value={Modes.ColorMatch}>Color Match</option>
+        </Form.Control>
+      </div>
+      {/*<Prompt setGoal={setGoal}/>*/}
+      {/*{ isBeta*/}
+      {/*  ? <GameBoard columns={3} rows={3}/>*/}
+      {/*  : <KeyResponse audioPath="set1/" setGuess={setGuess} />*/}
+      {/*}*/}
+      {/*{*/}
+      {/*  goal !== null && goal === guess*/}
+      {/*  ? <div>YOU WIN</div>*/}
+      {/*  : <div />*/}
+      {/*}*/}
+
     </div>
   );
 }

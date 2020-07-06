@@ -48,9 +48,9 @@ export const GameBoard = ({rows, columns}) => {
 
 
 
-  const payload = (data) => {
+  // const payload = (data) => {
     // return <SelectCell style={cellStyle} content={col} selectedColor={colorMap[col]} audio={audio}/>
-  };
+  // };
 
   // return (
   //   <div>{JSON.stringify(makeMatrix(3,3,shuffledColors))}</div>
@@ -69,7 +69,6 @@ export const GameBoard = ({rows, columns}) => {
   };
 
   const matrix = makeMatrix(rows, columns, shuffleArray(colorList));
-  console.log(matrix)
   return (
     <Table className="ColorMatch" onClick={(e) => {e.preventDefault()}}>
       <tbody onClick={(e) => {e.preventDefault()}}>
