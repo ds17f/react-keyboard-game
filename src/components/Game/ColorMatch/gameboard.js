@@ -72,24 +72,30 @@ export const GameBoard = ({rows, columns}) => {
 
   const matrix = makeMatrix(rows, columns, shuffleArray(colorList));
   return (
-    <Table className="ColorMatch" onClick={(e) => {e.preventDefault()}}>
-      <tbody onClick={(e) => {e.preventDefault()}}>
-      {
-        matrix.map(row => {
-          return <tr onClick={(e) => {e.preventDefault()}}>
-            {
-              row.map(col => {
-                const style = Object.assign({}, cellStyle, {background: col});
-                style.color = lightOrDark(col) === "light" || col === "black" ? "white" : "black";
-                return <td onClick={() => !window.speechSynthesis.speaking && speechSynth(col, 'en-US')} style={style}>{col[0].toUpperCase()}</td>
-              })
-            }
-          </tr>
-        })
+    <div className="GameBoard">
+      <Table className="ColorMatch" onClick={(e) => {e.preventDefault()}}>
+        <tbody onClick={(e) => {e.preventDefault()}}>
+        {
+          matrix.map(row => {
+            return <tr onClick={(e) => {e.preventDefault()}}>
+              {
+                row.map(col => {
+                  const style = Object.assign({}, cellStyle, {background: col});
+                  style.color = lightOrDark(col) === "light" || col === "black" ? "white" : "black";
+                  return (
+                    <td onClick={() => !window.speechSynthesis.speaking && speechSynth(col, 'en-US')} style={style}>
+                      {col[0].toUpperCase()}
+                    </td>
+                  )
+                })
+              }
+            </tr>
+          })
 
-      }
-      </tbody>
-    </Table>
+        }
+        </tbody>
+      </Table>
+    </div>
   )
 
 };
