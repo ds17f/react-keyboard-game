@@ -6,16 +6,18 @@ import './App.css';
 import { KeyResponse } from './components/KeyResponse';
 import { GameBoard as LetterSearch } from "./components/Game/LetterSearch";
 import { GameBoard as ColorMatchGame } from "./components/Game/ColorMatch/gameboard"
+import { LetterLearning } from "./components/Game/LetterLearning";
 
 const Modes = {
   "Keyboard": "Keyboard",
   "LetterSearch": "LetterSearch",
-  "ColorMatch": "ColorMatch"
+  "ColorMatch": "ColorMatch",
+  "LetterLearning": "LetterLearning"
 };
 
 
 function App() {
-  const [mode, setMode] = useState(Modes.ColorMatch);
+  const [mode, setMode] = useState(Modes.LetterLearning);
 
   const getContent = (mode) => {
     switch (mode) {
@@ -27,6 +29,9 @@ function App() {
 
       case Modes.Keyboard:
         return <KeyResponse audioPath="set1/" />;
+
+      case Modes.LetterLearning:
+        return <LetterLearning />;
 
       default:
         return <div>unknown</div>
@@ -41,9 +46,9 @@ function App() {
 
       <div className="ModeSelect">
         <Form.Control as="select" onChange={(e) => setMode(e.target.value)}>
-          <option value={Modes.Keyboard} selected={mode === Modes.Keyboard}>Keyboard</option>
-          <option value={Modes.LetterSearch} selected={mode === Modes.LetterSearch}>Letter Search</option>
-          <option value={Modes.ColorMatch} selected={mode === Modes.ColorMatch}>Color Match</option>
+          { Object.keys(Modes).map(gameMode =>
+            <option value={gameMode} selected={mode === gameMode}>{gameMode}</option>
+          )}
         </Form.Control>
       </div>
       {/*<Prompt setGoal={setGoal}/>*/}

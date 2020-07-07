@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Table} from "react-bootstrap";
 import "./styles.css"
-import { lightOrDark } from '../../../lib'
+import {lightOrDark, randomColor} from '../../../lib'
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -61,14 +61,11 @@ const randomAlpha = (bias) => {
   }
 };
 
-const getRandomColor = () => {
-  return "#" + Math.floor(Math.random()*16777215).toString(16);
-};
 
 const getColorMap = (keyString) => {
   const colorMap = {};
   for (let letter of keyString) {
-    const color = getRandomColor();
+    const color = randomColor();
     colorMap[letter] = color !== "#D3D3D3" ? color : "#FF0000"
   }
 

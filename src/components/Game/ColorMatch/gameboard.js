@@ -33,10 +33,10 @@ export const GameBoard = () => {
     "green","orange","purple",
     "white","black",
     "pink",
-    "grey","brown"
+    "grey","brown", "tan"
   ];
-  const rows = 2;
-  const columns = 5;
+  const rows = 3;
+  const columns = 4;
 
   const makeMatrix = (x, y, source) => {
     let index = 0;

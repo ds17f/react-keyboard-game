@@ -1,3 +1,7 @@
+export const randomColor = () => {
+    return "#" + Math.floor(Math.random()*16777215).toString(16);
+};
+
 export const lightOrDark = (color) => {
 
   // Variables for red, green, blue values
