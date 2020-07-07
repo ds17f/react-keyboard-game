@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useKeys} from "../../../effects/useKeys";
 import speechSynth from "speech-synthesis";
 
-import db from "./db"
+import vocabulary from "./vocabulary"
 
 import "./styles.css"
 import {randomColor} from "../../../lib";
@@ -12,12 +12,9 @@ export const LetterLearning = () => {
   const [img, setImg] = useState(null);
 
   const chooseWord = (letter) => {
-    //TODO: random choices, etc...
-    const words = db[letter.toUpperCase()];
-
-    const choice = words[Math.floor(Math.random() * words.length)];
-
-    return choice;
+    const words = vocabulary[letter.toUpperCase()];
+    const randomChoice = Math.floor(Math.random() * words.length);
+    return words[randomChoice];
   };
 
   const displayKey = keyCode => {
