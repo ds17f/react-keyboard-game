@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react-keyboard-game/static/css/main.dbd0b1ea.chunk.css",
-    "main.js": "/react-keyboard-game/static/js/main.ea3cd89d.chunk.js",
-    "main.js.map": "/react-keyboard-game/static/js/main.ea3cd89d.chunk.js.map",
+    "main.css": "/react-keyboard-game/static/css/main.b25a8c2f.chunk.css",
+    "main.js": "/react-keyboard-game/static/js/main.6483553e.chunk.js",
+    "main.js.map": "/react-keyboard-game/static/js/main.6483553e.chunk.js.map",
     "runtime-main.js": "/react-keyboard-game/static/js/runtime-main.2c76e6e2.js",
     "runtime-main.js.map": "/react-keyboard-game/static/js/runtime-main.2c76e6e2.js.map",
     "static/css/2.829c9cb5.chunk.css": "/react-keyboard-game/static/css/2.829c9cb5.chunk.css",
-    "static/js/2.803f2bbd.chunk.js": "/react-keyboard-game/static/js/2.803f2bbd.chunk.js",
-    "static/js/2.803f2bbd.chunk.js.map": "/react-keyboard-game/static/js/2.803f2bbd.chunk.js.map",
+    "static/js/2.2d1e1cfe.chunk.js": "/react-keyboard-game/static/js/2.2d1e1cfe.chunk.js",
+    "static/js/2.2d1e1cfe.chunk.js.map": "/react-keyboard-game/static/js/2.2d1e1cfe.chunk.js.map",
     "index.html": "/react-keyboard-game/index.html",
-    "precache-manifest.9a78853dbe1f16489531b37f7631af66.js": "/react-keyboard-game/precache-manifest.9a78853dbe1f16489531b37f7631af66.js",
+    "precache-manifest.4c2633b97adc2ea2a6c021272e682222.js": "/react-keyboard-game/precache-manifest.4c2633b97adc2ea2a6c021272e682222.js",
     "service-worker.js": "/react-keyboard-game/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/react-keyboard-game/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.dbd0b1ea.chunk.css.map": "/react-keyboard-game/static/css/main.dbd0b1ea.chunk.css.map",
-    "static/js/2.803f2bbd.chunk.js.LICENSE.txt": "/react-keyboard-game/static/js/2.803f2bbd.chunk.js.LICENSE.txt"
+    "static/css/main.b25a8c2f.chunk.css.map": "/react-keyboard-game/static/css/main.b25a8c2f.chunk.css.map",
+    "static/js/2.2d1e1cfe.chunk.js.LICENSE.txt": "/react-keyboard-game/static/js/2.2d1e1cfe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2c76e6e2.js",
     "static/css/2.829c9cb5.chunk.css",
-    "static/js/2.803f2bbd.chunk.js",
-    "static/css/main.dbd0b1ea.chunk.css",
-    "static/js/main.ea3cd89d.chunk.js"
+    "static/js/2.2d1e1cfe.chunk.js",
+    "static/css/main.b25a8c2f.chunk.css",
+    "static/js/main.6483553e.chunk.js"
   ]
 }
