@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import {Table} from "react-bootstrap";
 import "./styles.css"
-import {lightOrDark, randomColor} from '../../../lib'
+import {chooseVocabularyWord, lightOrDark, randomColor} from '../../../lib'
+import speechSynth from "speech-synthesis";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -131,9 +132,13 @@ const SelectCell = ({content, selectedColor, style, audio}) => {
   const [isSelected, setSelected] = useState(false);
 
   const speakLetter = () => {
-    const path = "set1";
-    audio.src = `${window.location.origin}${window.location.pathname}audio/${path}/${content.toLowerCase()}.mp3`;
-    audio.play();
+    if (window.speechSynthesis.speaking) {
+      return;
+    }
+
+    const [word, ] = chooseVocabularyWord(content);
+    speechSynth(`${content}... ... ${word}`, 'en-US');
+
   };
 
   const onClick = () => {

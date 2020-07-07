@@ -1,3 +1,5 @@
+import vocabulary from "./vocabulary";
+
 export const randomColor = () => {
     return "#" + Math.floor(Math.random()*16777215).toString(16);
 };
@@ -46,3 +48,10 @@ export const lightOrDark = (color) => {
     return 'dark';
   }
 };
+
+export const chooseVocabularyWord = (letter) => {
+  const words = vocabulary[letter.toUpperCase()];
+  const randomChoice = Math.floor(Math.random() * words.length);
+  return words[randomChoice];
+};
+
