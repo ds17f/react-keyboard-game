@@ -41,4 +41,4 @@ export const lightOrDark = (color) => {
 
     return 'dark';
   }
-}
+};

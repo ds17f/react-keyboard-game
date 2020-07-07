@@ -15,7 +15,7 @@ const Modes = {
 
 
 function App() {
-  const [mode, setMode] = useState(Modes.LetterSearch);
+  const [mode, setMode] = useState(Modes.ColorMatch);
 
   const getContent = (mode) => {
     switch (mode) {
@@ -41,9 +41,9 @@ function App() {
 
       <div className="ModeSelect">
         <Form.Control as="select" onChange={(e) => setMode(e.target.value)}>
-          <option value={Modes.Keyboard}>Keyboard</option>
-          <option value={Modes.LetterSearch}>Letter Search</option>
-          <option value={Modes.ColorMatch}>Color Match</option>
+          <option value={Modes.Keyboard} selected={mode === Modes.Keyboard}>Keyboard</option>
+          <option value={Modes.LetterSearch} selected={mode === Modes.LetterSearch}>Letter Search</option>
+          <option value={Modes.ColorMatch} selected={mode === Modes.ColorMatch}>Color Match</option>
         </Form.Control>
       </div>
       {/*<Prompt setGoal={setGoal}/>*/}

@@ -10,6 +10,7 @@ body {
     padding-bottom: 15px;
 }
 
+
 .LetterSearch {
     font-size: 32px;
     text-align: center;
@@ -25,6 +26,6 @@ body {
     user-select: none;
 }
 
-.table td {
-    border-top: 20px
+td {
+    border: black solid 1px;
 }

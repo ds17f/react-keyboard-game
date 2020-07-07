@@ -3,6 +3,8 @@ import {Table} from "react-bootstrap";
 import speechSynth from "speech-synthesis";
 import { lightOrDark } from "../../../lib";
 
+import "./styles.css"
+
 const shuffleArray = (array) => {
   let currentIndex = array.length;
   let temporaryValue;
@@ -79,7 +81,7 @@ export const GameBoard = ({rows, columns}) => {
               row.map(col => {
                 const style = Object.assign({}, cellStyle, {background: col});
                 style.color = lightOrDark(col) === "light" || col === "black" ? "white" : "black";
-                return <td onClick={() => speechSynth(col, 'en-US')} style={style}>{col[0].toUpperCase()}</td>
+                return <td onClick={() => !window.speechSynthesis.speaking && speechSynth(col, 'en-US')} style={style}>{col[0].toUpperCase()}</td>
               })
             }
           </tr>
