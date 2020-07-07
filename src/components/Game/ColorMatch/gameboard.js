@@ -27,12 +27,16 @@ const shuffleArray = (array) => {
 };
 
 
-export const GameBoard = ({rows, columns}) => {
+export const GameBoard = () => {
   const colorList = [
-    "red","blue","green",
-    "pink","purple","yellow",
-    "white","black", "orange"
+    "red","yellow","blue",
+    "green","orange","purple",
+    "white","black",
+    "pink",
+    "grey","brown"
   ];
+  const rows = 2;
+  const columns = 5;
 
   const makeMatrix = (x, y, source) => {
     let index = 0;
@@ -47,17 +51,6 @@ export const GameBoard = ({rows, columns}) => {
     return matrix;
   };
 
-
-
-
-  // const payload = (data) => {
-    // return <SelectCell style={cellStyle} content={col} selectedColor={colorMap[col]} audio={audio}/>
-  // };
-
-  // return (
-  //   <div>{JSON.stringify(makeMatrix(3,3,shuffledColors))}</div>
-  // );
-
   const rowHeight = (window.innerHeight - 90) / rows;
   const colWidth = (window.innerWidth * .8) / columns;
 
@@ -70,7 +63,7 @@ export const GameBoard = ({rows, columns}) => {
     fontSize: 32
   };
 
-  const matrix = makeMatrix(rows, columns, shuffleArray(colorList));
+  const matrix = makeMatrix(columns, rows, shuffleArray(colorList));
   return (
     <div className="GameBoard">
       <Table className="ColorMatch" onClick={(e) => {e.preventDefault()}}>
