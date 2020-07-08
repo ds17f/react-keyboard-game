@@ -67,7 +67,7 @@ const getColorMap = (keyString) => {
   const colorMap = {};
   for (let letter of keyString) {
     const color = randomColor();
-    colorMap[letter] = color !== "#D3D3D3" ? color : "#FF0000"
+    colorMap[letter] = color !== "#D3D3D3" || color !== "lightgrey" ? color : "#FF0000"
   }
 
   return colorMap;
@@ -133,7 +133,7 @@ const SelectCell = ({content, selectedColor, style, audio}) => {
 
   const speakLetter = () => {
     if (window.speechSynthesis.speaking) {
-      return;
+      window.speechSynthesis.cancel();
     }
 
     const [word, ] = chooseVocabularyWord(content);
