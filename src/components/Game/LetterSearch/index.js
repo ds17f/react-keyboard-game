@@ -6,7 +6,7 @@ import speechSynth from "speech-synthesis";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-export const  GameBoard = () => {
+export const  GameBoard = ({height, width}) => {
 
   const rands = [
     Math.floor((Math.random()*ALPHABET.length)),
@@ -20,11 +20,12 @@ export const  GameBoard = () => {
     [ALPHABET[rands[2]], .20, "lightgreen"],
   ];
 
-  const size = Math.min(10,Math.floor((window.innerHeight - 30) / 60));
+  // const size = Math.min(10,Math.floor((window.innerHeight - 30) / 60));
+  const size = Math.min(10, Math.floor((height) / 60));
 
   return (
     <div className="GameBoard">
-      <LetterSearch size={size} bias={bias} />
+      <LetterSearch size={size} bias={bias} height={height} width={width}/>
     </div>
   )
 
@@ -87,14 +88,16 @@ const generateLetterMatrix = (x, y, bias) => {
   return matrix;
 };
 
-const LetterSearch = ({size , bias}) => {
+const LetterSearch = ({height, width, size, bias}) => {
   const numOfRows = size;
   const numOfColumns = size;
 
   const matrix = generateLetterMatrix(numOfRows, numOfColumns, bias);
 
-  const rowHeight = (window.innerHeight - 90) / numOfRows;
-  const colWidth = (window.innerWidth * .8) / numOfColumns;
+  // const rowHeight = (window.innerHeight - 90) / numOfRows;
+  // const colWidth = (window.innerWidth * .8) / numOfColumns;
+  const rowHeight = height /  numOfRows;
+  const colWidth = width * .95 / numOfColumns;
 
   const cellStyle = {
     display: "inline-block",

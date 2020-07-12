@@ -1,0 +1,10 @@
+.TableTop {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TableTop .TopPanel,
+.TableTop .BottomPanel {
+    height: 10%
+}

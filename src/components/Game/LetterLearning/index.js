@@ -32,7 +32,7 @@ export const LetterLearning = () => {
   return (
     <div style={{color: randomColor()}} className="LetterLearning">
       {pressedKey}
-      {img ? <img alt="thing" src={img} /> : ""}
+      {img ? <img alt="" src={img} /> : ""}
     </div>
   )
 };

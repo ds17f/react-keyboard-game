@@ -27,7 +27,7 @@ const shuffleArray = (array) => {
 };
 
 
-export const GameBoard = () => {
+export const GameBoard = ({height, width}) => {
   const colorList = [
     "red","yellow","blue",
     "green","orange","purple",
@@ -51,8 +51,10 @@ export const GameBoard = () => {
     return matrix;
   };
 
-  const rowHeight = (window.innerHeight - 90) / rows;
-  const colWidth = (window.innerWidth * .8) / columns;
+  // const rowHeight = (window.innerHeight - 90) / rows;
+  // const colWidth = (window.innerWidth * .8) / columns;
+  const rowHeight = height * .90 /  rows;
+  const colWidth = width * .95 / columns;
 
   const cellStyle = {
     display: "inline-block",
