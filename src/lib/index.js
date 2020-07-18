@@ -49,9 +49,36 @@ export const lightOrDark = (color) => {
   }
 };
 
-export const chooseVocabularyWord = (letter) => {
+export const chooseRandomVocabularyWord = (letter) => {
   const words = vocabulary[letter.toUpperCase()];
   const randomChoice = Math.floor(Math.random() * words.length);
   return words[randomChoice];
+}
+
+const lastChoices = {}
+export const chooseNextVocabularyWord = (letter) => {
+  const words = vocabulary[letter.toUpperCase()];
+  const lastChoice = lastChoices[letter.toUpperCase()]
+  console.log(lastChoice)
+  if (typeof lastChoice === 'undefined') {
+    console.log("undefined")
+    lastChoices[letter.toUpperCase()] = 0;
+    return words[0];
+  }
+
+  const nextChoice = lastChoice + 1;
+  if (nextChoice >= words.length) {
+    console.log("restart")
+    lastChoices[letter.toUpperCase()] = 0;
+    return words[0];
+  }
+
+  lastChoices[letter.toUpperCase()] = nextChoice;
+  return words[nextChoice];
+
+
+}
+export const chooseVocabularyWord = (letter) => {
+  return chooseNextVocabularyWord(letter);
 };
 
