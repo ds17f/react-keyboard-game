@@ -3,10 +3,14 @@ import {Table} from "react-bootstrap";
 import "./styles.css"
 import {chooseVocabularyWord, lightOrDark, randomColor} from '../../../lib'
 import speechSynth from "speech-synthesis";
+import {useKeys} from "../../../effects/useKeys";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 export const  GameBoard = ({height, width}) => {
+
+  // prevent the spacebar from scrolling
+  useKeys(null, null, () => {});
 
   const rands = [
     Math.floor((Math.random()*ALPHABET.length)),
