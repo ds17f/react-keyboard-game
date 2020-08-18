@@ -26,6 +26,20 @@ const shuffleArray = (array) => {
   return array;
 };
 
+const rosetta = {
+  red: "rojo",
+  yellow: "amarillo",
+  blue: "azul",
+  green: "verde",
+  purple: "lila",
+  white: "blanco",
+  black: "negro",
+  pink: "rosa",
+  grey: "gris",
+  brown: "marrón",
+  tan: "Bronceado",
+  orange: "naranja"
+}
 
 export const GameBoard = ({height, width}) => {
   const colorList = [
@@ -77,8 +91,11 @@ export const GameBoard = ({height, width}) => {
                 row.map(col => {
                   const style = Object.assign({}, cellStyle, {background: col});
                   style.color = lightOrDark(col) === "light" || col === "black" ? "white" : "black";
+                  const spanishCol = rosetta[col];
+                  // const english = () => speechSynth(col, 'en-US')
+                  const spanish = () => speechSynth(spanishCol, 'es-ES')
                   return (
-                    <td onClick={() => !window.speechSynthesis.speaking && speechSynth(col, 'en-US')} style={style}>
+                    <td onClick={() => !window.speechSynthesis.speaking && spanish()} style={style}>
                       {col[0].toUpperCase()}
                     </td>
                   )

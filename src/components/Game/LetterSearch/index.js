@@ -5,9 +5,9 @@ import {chooseVocabularyWord, lightOrDark, randomColor} from '../../../lib'
 import speechSynth from "speech-synthesis";
 import {useKeys} from "../../../effects/useKeys";
 
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-export const  GameBoard = ({height, width}) => {
+export const  GameBoard = ({height, width, ALPHABET}) => {
 
   // prevent the spacebar from scrolling
   useKeys(null, null, () => {});
@@ -29,7 +29,7 @@ export const  GameBoard = ({height, width}) => {
 
   return (
     <div className="GameBoard">
-      <LetterSearch size={size} bias={bias} height={height} width={width}/>
+      <LetterSearch size={size} bias={bias} height={height} width={width} alphabet={ALPHABET}/>
     </div>
   )
 
@@ -37,8 +37,7 @@ export const  GameBoard = ({height, width}) => {
 
 // bias is an array of letters and their weights
 // so [["A",.25],["Z",.10]]
-const randomAlpha = (bias) => {
-  let alphabet = ALPHABET;
+const randomAlpha = (bias, alphabet) => {
   // remove the biased letters from the alphabet
   bias.forEach(x => alphabet = alphabet.replace(x[0], ""));
 
@@ -79,24 +78,25 @@ const getColorMap = (keyString) => {
 };
 
 
-const generateLetterMatrix = (x, y, bias) => {
+const generateLetterMatrix = (x, y, bias, alphabet) => {
 
   const matrix = [];
   for (let row = 0; row < y; row++) {
     const colArr = [];
     matrix.push(colArr);
     for (let col = 0; col < x; col++) {
-      colArr.push(randomAlpha(bias));
+      colArr.push(randomAlpha(bias, alphabet));
     }
   }
   return matrix;
 };
 
-const LetterSearch = ({height, width, size, bias}) => {
+const LetterSearch = ({height, width, size, bias, alphabet}) => {
+  const ALPHABET = alphabet
   const numOfRows = size;
   const numOfColumns = size;
 
-  const matrix = generateLetterMatrix(numOfRows, numOfColumns, bias);
+  const matrix = generateLetterMatrix(numOfRows, numOfColumns, bias, ALPHABET);
 
   // const rowHeight = (window.innerHeight - 90) / numOfRows;
   // const colWidth = (window.innerWidth * .8) / numOfColumns;

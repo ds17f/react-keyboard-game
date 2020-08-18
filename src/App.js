@@ -12,13 +12,23 @@ import {TableTop} from "./components/TableTop";
 const Modes = {
   "Keyboard": "Keyboard",
   "LetterSearch": "LetterSearch",
+  "LetterSearch_Vowels": "LetterSearch_Vowels",
+  "LetterSearch_A_Through_G": "LetterSearch_A_Through_G",
+  "LetterSearch_H_Through_M": "LetterSearch_H_Through_M",
+  "LetterSearch_N_Through_T": "LetterSearch_N_Through_T",
+  "LetterSearch_U_Through_Z": "LetterSearch_U_Through_Z",
   "ColorMatch": "ColorMatch",
   "LetterLearning": "LetterLearning"
 };
 
 const Games = {
   [Modes.Keyboard]: KeyResponse,
-  [Modes.LetterSearch]: LetterSearch,
+  [Modes.LetterSearch]: ({width, height}) => <LetterSearch height={height} width={width} ALPHABET={"ABCDEFGHIJKLMOPQRSTUVWXYZ"} />,
+  [Modes.LetterSearch_Vowels]: ({width, height}) => <LetterSearch height={height} width={width} ALPHABET={"AEIOU"} />,
+  [Modes.LetterSearch_A_Through_G]: ({width, height}) => <LetterSearch height={height} width={width} ALPHABET={"abcdefgABCDEFG"} />,
+  [Modes.LetterSearch_H_Through_M]: ({width, height}) => <LetterSearch height={height} width={width} ALPHABET={"hijklmHIJKLM"} />,
+  [Modes.LetterSearch_N_Through_T]: ({width, height}) => <LetterSearch height={height} width={width} ALPHABET={"NOPQRSTnopqrst"} />,
+  [Modes.LetterSearch_U_Through_Z]: ({width, height}) => <LetterSearch height={height} width={width} ALPHABET={"UVWXYZuvwxyz"} />,
   [Modes.ColorMatch]: ColorMatchGame,
   [Modes.LetterLearning]: LetterLearning
 };
