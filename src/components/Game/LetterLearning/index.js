@@ -23,7 +23,7 @@ export const LetterLearning = () => {
 
     setImg(image);
 
-    speechSynth(`${key}... ... ${word}`, 'en-US')
+    speechSynth(`${key}, ${word}`, 'en-US')
   };
 
   useKeys(displayKey);
