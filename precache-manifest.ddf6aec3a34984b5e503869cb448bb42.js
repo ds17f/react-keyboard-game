@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9318e5ef7316e16ed368ca5261acd05d",
+    "revision": "a3596b3f26b995f3b8efdd2c24b73a1a",
     "url": "/react-keyboard-game/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-keyboard-game/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "6fcbc641ba1fd430189b",
+    "revision": "77d2e29c42c666576872",
     "url": "/react-keyboard-game/static/css/main.971f16a3.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-keyboard-game/static/js/2.4db7bdde.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6fcbc641ba1fd430189b",
-    "url": "/react-keyboard-game/static/js/main.100bd7fa.chunk.js"
+    "revision": "77d2e29c42c666576872",
+    "url": "/react-keyboard-game/static/js/main.f4cf53fd.chunk.js"
   },
   {
     "revision": "e7862e096a2e1b1a3375",
